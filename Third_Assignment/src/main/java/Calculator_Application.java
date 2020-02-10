@@ -29,22 +29,26 @@ public class Calculator_Application
 			System.out.println("Enter the operator");
 			op=sc.next();
 					
-			Math_Operators operator=new Math_Operators();
+			MathOperations operator;
 			
 			switch(op)
 			{
 				case "+":
-					result=operator.add(num1, num2);
+					operator=new Addition();
+					result=operator.calculate(num1, num2);
 					break;
 				case "-":
-					result=operator.sub(num1, num2);
+					operator=new Substration();
+					result=operator.calculate(num1, num2);
 					break;
 				case "*":
-					result=operator.mul(num1, num2);
+					operator=new Multiplication();
+					result=operator.calculate(num1, num2);
 					break;
 				
 				case "/":
-					result=operator.div(num1, num2);
+					operator=new Division();
+					result=operator.calculate(num1, num2);
 					break;
 					
 				default:
